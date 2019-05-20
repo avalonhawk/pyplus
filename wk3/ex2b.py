@@ -36,5 +36,5 @@ for device in device_list:
 
 filename = "lab_info.yml"
 with open(filename, "wt") as f:
-    yaml.dump(lab_list, f, default_flow_style=True)
+    yaml.dump(lab_list, f, default_flow_style=False)
 
