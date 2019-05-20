@@ -1,0 +1,10 @@
+vlan 100
+exit
+vlan 200
+exit
+vlan 300
+exit
+vlan 400
+exit
+vlan 500
+exit
