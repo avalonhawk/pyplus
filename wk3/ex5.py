@@ -5,7 +5,7 @@ import yaml
 # read in connection file
 filename = input("Enter connection filename: ")
 
-with open(filenmae) as f:
+with open(filename) as f:
     connections = yaml.load(f)
 
 net_conn = ConnectHandler(**connections['cisco3'])
