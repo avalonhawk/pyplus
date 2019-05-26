@@ -21,6 +21,17 @@ output = net_conn.send_command('show run')
 # set output as a list for ciscoconfparse to handle
 sh_run = output.splitlines()
 
-CiscoConfParse(sh_run)
+parser = CiscoConfParse(sh_run)
 
+interfaces = parser.find_objects_w_child(parentspec=r"^interface", childspec=r"^\s+ip address")
+
+print()
+print("=" * 80)
+
+for obj in interfaces:
+    print("Interface Line: {}".format(obj.text))
+    ipaddr = obj.re_search_children(r"^\s+ip address")[0].text
+    print("IP Address Line: {}".format(ipaddr))
+    print("=" * 80)
+    print()
 
